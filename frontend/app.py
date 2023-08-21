@@ -72,7 +72,7 @@ def result():
 
             if format_type == 'json':
                 json_data = read_csv_and_convert_to_json(file_path)
-                return jsonify(json_data)
+                return render_template("JsonTable.html", json=json_data)
             else:
                 return send_file(file_path, as_attachment=True)
 
@@ -128,7 +128,7 @@ def detail(file_name_number):
 
     if format_type == 'json':
         json_data = read_csv_and_convert_to_json(file_path)
-        return jsonify(json_data)
+        return render_template("JsonTable.html", json=json_data)
     else:
         return render_template("scenario_list.html", csv=csv_data)
 

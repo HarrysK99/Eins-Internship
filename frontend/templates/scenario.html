@@ -6,6 +6,7 @@
         <tr class="table-dark">
             <th>번호</th>
             <th>제목</th>
+            <th>Json</th>
         </tr>
         </thead>
         <tbody>
@@ -15,6 +16,12 @@
             <td>{{ i + 1 }}</td>
             <td>
                 <a href="/detail/{{ i }}/">{{ scenario_name[i] }}</a>
+            </td>
+            <td>
+                <form method="get" action="/detail/{{ i }}/">
+                    <input type="hidden" name="format" value="json">
+                    <button type="submit">JSON</button>
+                </form>
             </td>
         </tr>
         {% endfor %}
